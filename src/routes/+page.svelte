@@ -1,6 +1,8 @@
-<a href="https://hackclub.com/">
-	<img class=" w-full max-w-32 border-0" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club" style=" padding-top: var(--spacing-2);"/>
-</a>
+<div class=" w-full max-w-32 border-0">
+	<a href="https://hackclub.com/">
+		<img  src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club" style=" padding-top: var(--spacing-2);"/>
+	</a>
+</div>
 
 <div class="flex flex-col items-center " style="padding-top: var(--spacing-2); padding-bottom: var(--spacing-4);">
 	<h1 class="text-center ultratitle" style="color: var(--color-primary);"> SoundSprout </h1>
