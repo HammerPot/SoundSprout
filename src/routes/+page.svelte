@@ -3,7 +3,7 @@
 </a>
 
 <div class="flex flex-col items-center " style="padding-top: var(--spacing-2); padding-bottom: var(--spacing-4);">
-	<h1 class="text-center title" style="color: var(--color-primary);"> SoundSprout </h1>
+	<h1 class="text-center ultratitle" style="color: var(--color-primary);"> SoundSprout </h1>
 	<p class="text-center headline" style="color: var(--color-text);"> Make a Website that Generates Music, Get Seeds to Grow a Garden! </p>
 </div>
 
