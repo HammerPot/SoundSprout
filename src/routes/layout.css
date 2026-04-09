@@ -1,6 +1,5 @@
 /* Tailwind preflight lives in `base`; Hack Club theme uses `hack-club-theme`.
-   Without this, `base` is ordered after `hack-club-theme` and wins (e.g. h1 reset). */
-@layer theme, base, hack-club-theme, components, utilities;
+   Global layer order is set in src/app.html (Vite/LightningCSS drops it from this file in production). */
 
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,400..700&display=swap');
 @import 'https://css.hackclub.com/theme.css';

@@ -2,6 +2,11 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<!-- Layer order must run before bundled CSS. Vite strips the same line from layout.css,
+		     which lets Tailwind `base` beat Hack Club `hack-club-theme` (e.g. `.title` font-size). -->
+		<style>
+			@layer theme, base, hack-club-theme, components, utilities;
+		</style>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="text-scale" content="scale" />
 		%sveltekit.head%
