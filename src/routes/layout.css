@@ -1,0 +1,78 @@
+/* Tailwind preflight lives in `base`; Hack Club theme uses `hack-club-theme`.
+   Without this, `base` is ordered after `hack-club-theme` and wins (e.g. h1 reset). */
+@layer theme, base, hack-club-theme, components, utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,400..700&display=swap');
+@import 'https://css.hackclub.com/theme.css';
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+
+@layer hack-club-theme {
+	body {
+		font-family:
+			'Google Sans Flex', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	}
+}
+
+/** 
+   Color variables: Set up a foundational palette using CSS custom properties. 
+   These can be used throughout your project for easy theming and maintenance.
+*/
+:root {
+  --color-background: oklch(20.84% 0.008 17.911);
+  --color-background-2: oklch(18.522% 0.007 17.911);
+  --color-background-3: oklch(16.203% 0.007 17.911);
+  --color-text: oklch(83.768% 0.001 17.911);
+
+  --color-primary: oklch(68.628% 0.185 148.958);
+  --color-primary-text: oklch(0% 0 0);
+
+  --color-secondary: oklch(69.776% 0.135 168.327);
+  --color-secondary-text: oklch(13.955% 0.027 168.327);
+
+  --color-accent: oklch(70.628% 0.119 185.713);
+  --color-accent-text: oklch(14.125% 0.023 185.713);
+
+  --color-neutral: oklch(30.698% 0.039 171.364);
+  --color-neutral-text: oklch(86.139% 0.007 171.364);
+
+  --color-info: oklch(72.06% 0.191 231.6);
+  --color-info-text: oklch(0% 0 0);
+
+  --color-success: oklch(64.8% 0.15 160);
+  --color-success-text: oklch(0% 0 0);
+
+  --color-warning: oklch(84.71% 0.199 83.87);
+  --color-warning-text: oklch(0% 0 0);
+
+  --color-error: oklch(71.76% 0.221 22.18);
+  --color-error-text: oklch(0% 0 0);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Keep long words / URLs from blowing past Hack Club `.card` and `.container` on narrow viewports. */
+:where(.card, .container) {
+	overflow-wrap: anywhere;
+}
+
+/* Grid children default to min-width: auto; allow them to shrink so text wraps inside cards. */
+:where(.grid) > * {
+	min-width: 0;
+}
+
+/* Hack Club `.card` only gets padding from `min-width: 32em` up; below that, padding is 0. */
+.card {
+	padding: var(--spacing-3);
+}
+
+@media screen and (min-width: 48em) {
+	.card {
+		padding: var(--spacing-4);
+	}
+}
