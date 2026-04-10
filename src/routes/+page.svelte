@@ -19,6 +19,7 @@
 		await Tone.start();
 		getSynth().triggerAttackRelease(note, '8n');
 	}
+	
 </script>
 
 <div class=" w-full max-w-32 border-0">
@@ -105,7 +106,7 @@
 				</div>
 			</div>
 			<div class="flex justify-center">
-				<button class="btn lg" style=" width: 95%; margin-top: var(--spacing-3);" href="https://slack.hackclub.com"> RSVP! </button>
+				<button class="btn lg" style=" width: 95%; margin-top: var(--spacing-3);" onclick={() => window.location.href = 'https://slack.hackclub.com'}> RSVP! </button>
 			</div>
 		</div>
 	</div>
@@ -124,19 +125,13 @@
 			<div style="padding-top: var(--spacing-1); padding-bottom: var(--spacing-2);">
 				<details class="card" style="background-color: var(--color-accent);">
 					<summary class="heading" style="color: var(--color-accent-text)"> What is a YSWS? </summary>
-					<p class="" style="color: var(--color-accent-text)"> YSWS are programs where teens can build cool projects and get cool things in return. </p>
+					<p class="" style="color: var(--color-accent-text)"> YSWS (You Ship We Ship) are programs where teens can build cool projects and get cool things in return. </p>
 				</details>
 			</div>
 			<div style="padding-top: var(--spacing-1); padding-bottom: var(--spacing-2);">
 				<details class="card" style="background-color: var(--color-accent);">
 					<summary class="heading" style="color: var(--color-accent-text)"> Can I participate? </summary>
 					<p class="" style="color: var(--color-accent-text)"> As long as you are 18 years old or younger, you can participate! </p>
-				</details>
-			</div>
-			<div style="padding-top: var(--spacing-1); padding-bottom: var(--spacing-2);">
-				<details class="card" style="background-color: var(--color-accent);">
-					<summary class="heading" style="color: var(--color-accent-text)"> What is a Gardening Kit? </summary>
-					<p class="" style="color: var(--color-accent-text)"> A gardening kit is a kit that contains everything you need to start growing your own garden in your very own home! This includes trays, soil pucks, and of course seeds. </p>
 				</details>
 			</div>
 			<div style="padding-top: var(--spacing-1); padding-bottom: var(--spacing-2);">
