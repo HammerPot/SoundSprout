@@ -13,6 +13,10 @@
 		font-family:
 			'Google Sans Flex', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 	}
+	.eyebrow {
+		font-family: 'HojasDePlata';
+		font-weight: 800;
+	}
 }
 
 /** 
@@ -65,6 +69,169 @@ body {
 	min-width: 0;
 }
 
+/* Compact photo pair under “Why are you running this?” — caps height so portrait shots don’t dominate the page. */
+.about-photo-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: var(--spacing-3);
+	align-items: center;
+	max-width: 22rem;
+	margin-inline: auto;
+}
+
+.lightbox-thumb {
+	appearance: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	background: none;
+	cursor: zoom-in;
+	border-radius: inherit;
+	font: inherit;
+	color: inherit;
+}
+
+.lightbox-thumb:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.about-photo-grid__thumb {
+	display: block;
+	width: 100%;
+	min-width: 0;
+}
+
+.about-photo-grid__thumb img {
+	width: 100%;
+	max-height: 9.25rem;
+	object-fit: cover;
+	border-radius: var(--radius, 0.375rem);
+}
+
+.content-thumb-wrap {
+	display: block;
+	width: fit-content;
+	max-width: 100%;
+	margin-inline: auto;
+}
+
+/* FAQ “Gardening Kit”: text + thumbnail side by side (stacks when narrow). */
+.gardening-kit-faq-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: var(--spacing-3);
+}
+
+.gardening-kit-faq-row > p {
+	flex: 1 1 12rem;
+	min-width: 0;
+	margin: 0;
+}
+
+.gardening-kit-faq-row__thumb {
+	margin-inline: 0;
+	align-self: center;
+	flex-shrink: 0;
+}
+
+@media screen and (max-width: 28rem) {
+	.gardening-kit-faq-row {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.gardening-kit-faq-row__thumb {
+		align-self: center;
+	}
+}
+
+/* Small inline reference images (e.g. FAQ). */
+.content-thumb {
+	display: block;
+	max-width: 22rem;
+	max-height: 14rem;
+	width: auto;
+	height: auto;
+	margin-inline: auto;
+	object-fit: contain;
+}
+
+dialog.image-lightbox {
+	position: fixed;
+	inset: 0;
+	width: min(96vw, 56rem);
+	max-width: min(96vw, 56rem);
+	max-height: min(92vh, 100%);
+	height: fit-content;
+	margin: auto;
+	overflow: auto;
+	border: none;
+	padding: var(--spacing-4);
+	border-radius: var(--radius, 0.5rem);
+	background: var(--color-background-3);
+	color: var(--color-text);
+}
+
+dialog.image-lightbox::backdrop {
+	background: oklch(0% 0 0 / 0.78);
+}
+
+.image-lightbox__img {
+	display: block;
+	max-width: 100%;
+	max-height: min(82vh, 85vw);
+	width: auto;
+	height: auto;
+	margin-inline: auto;
+	object-fit: contain;
+}
+
+.image-lightbox__actions {
+	margin-top: var(--spacing-3);
+	display: flex;
+	justify-content: center;
+}
+
+/* Info card grid: single column stays centered like the original blocks. From md up, 2 columns also keep full centered copy (in case flex layout affects inline/children). */
+.info-card-grid .card {
+	text-align: center;
+}
+
+/* 2×2 FAQ-style blocks: equal cell heights on md+ (see +page info card grid). */
+@media screen and (min-width: 48em) {
+	.info-card-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(2, minmax(0, 1fr));
+		min-height: clamp(28rem, 52vh, 44rem);
+		align-items: stretch;
+	}
+
+	.info-card-grid__cell {
+		display: flex;
+		flex-direction: column;
+		min-height: 0;
+		min-width: 0;
+	}
+
+	.info-card-grid__cell > .container {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		min-height: 0;
+		width: 100%;
+	}
+
+	.info-card-grid__cell .card {
+		flex: 1;
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
+		overflow-y: auto;
+	}
+}
+
 /* Hack Club `.card` only gets padding from `min-width: 32em` up; below that, padding is 0. */
 .card {
 	padding: var(--spacing-3);
@@ -74,4 +241,10 @@ body {
 	.card {
 		padding: var(--spacing-4);
 	}
+}
+
+
+@font-face {
+	font-family: 'HojasDePlata';
+	src: url('/fonts/HojasDePlata-M5We.ttf') format('truetype');
 }
